@@ -1,0 +1,77 @@
+#include <iostream>
+
+
+using namespace std;
+
+int main(){
+ 
+	float balance = 0;
+	int choice;
+	string user;
+	
+	
+	cout<<"                    ############   WELCOME TO BS2MA BANK! ###############"<<endl;
+	
+	cout <<"\nPlease enter your name: ";
+	cin >> user;
+	
+	cout<<" Welcome Mrs/Mr. "<<user<<endl;
+	
+	while(true){
+		
+		
+		cout << "1. deposit "      <<endl;
+		cout << "2. Withdraw "     <<endl;
+		cout << "3. Check Balance "<<endl;
+		cout << "4. sign out: "    <<endl;
+		                 
+		cin >> choice;
+	
+	
+	switch(choice)	{
+	            
+		case 1:
+			float depositAmount;
+			cout << "Enteer Deposit amount ";
+			cin  >> depositAmount;
+			balance += depositAmount;
+			cout << "Deposit Successful. "<<endl;
+			
+			break;
+		
+		case 2: 
+			float withdrawAmount;
+			cout << "Enter withdrawal amount: ";
+			cin >> withdrawAmount;
+			if (withdrawAmount > balance ){
+					cout << "Insufficient funds. ";
+				
+			}
+			
+			else{
+				balance -= withdrawAmount;
+				cout << "Withdraw succcessful. "<<endl;
+				
+			}
+			
+			break;
+			 	    
+		case 3:
+			cout << "Your currently balance Mr/Mrs "<<user<<" is: P "<< balance << endl;
+		    
+		    break;
+		
+		case 4:
+			cout << "Exit the program. "<<endl;
+			return 0;
+			
+		default:
+			cout << "Invalid choice. Please try again. "<< endl;
+			 	    
+}
+}
+		
+		
+		
+ return 0;
+}
